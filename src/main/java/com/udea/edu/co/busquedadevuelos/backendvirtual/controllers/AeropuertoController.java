@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("api/aeropuertos")
-public class AeropuertosController {
+public class AeropuertoController {
     
 
     private final AeropuertoService aeropuertoService;
 
     
-    public AeropuertosController(AeropuertoService aeropuertoService) {
+    public AeropuertoController(AeropuertoService aeropuertoService) {
         this.aeropuertoService = aeropuertoService;
     }
 
