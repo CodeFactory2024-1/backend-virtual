@@ -2,12 +2,8 @@ package com.udea.edu.co.busquedadevuelos.backendvirtual.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.udea.edu.co.busquedadevuelos.backendvirtual.entities.Aeropuerto;
 import com.udea.edu.co.busquedadevuelos.backendvirtual.services.AeropuertoService;
-
 import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

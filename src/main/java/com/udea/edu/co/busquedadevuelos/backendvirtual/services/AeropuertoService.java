@@ -1,10 +1,7 @@
 package com.udea.edu.co.busquedadevuelos.backendvirtual.services;
 
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Service;
-
-import com.udea.edu.co.busquedadevuelos.backendvirtual.entities.Aeropuerto;
 import com.udea.edu.co.busquedadevuelos.backendvirtual.repositories.AeropuertoRepository;
 
 import jakarta.transaction.Transactional;
