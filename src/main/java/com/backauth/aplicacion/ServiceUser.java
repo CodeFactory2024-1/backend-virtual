@@ -29,15 +29,15 @@ public class ServiceUser {
 
     }
 
-    public ResponseEntity<User> update(User user){
-        if(userRepository.getUser(user.getUserId()).isPresent()){
-            return new ResponseEntity<>(userRepository.update(user), HttpStatus.ACCEPTED);
-        }
-
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    public User updateUser(User user)
+    {
+        return userRepository.updateUser(user);
     }
 
-
+    public User updatePassword(User user)
+    {
+        return userRepository.updatePassword(user);
+    }
 
     public boolean delete(String userId)
     {

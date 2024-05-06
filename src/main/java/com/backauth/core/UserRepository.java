@@ -22,9 +22,25 @@ public class UserRepository{
         return (User) userCrudRepository.save(user);
     }
 
-    public User update(User user)
+    public User updateUser(User user)
     {
-        return (User) userCrudRepository.save(user);
+        Optional<User> userOptionalExist = getUser(user.getUserId());
+        if (userOptionalExist.isPresent()){
+            User existUser = userOptionalExist.get();
+            if (userOptionalExist.get().getUserEmail().equals(user.getUserEmail())){
+                existUser.setUserName(user.getUserName());
+                existUser.setUserLastname(user.getUserLastname());
+                existUser.setUserPhoneNumber(user.getUserPhoneNumber());
+                return userCrudRepository.save(existUser);
+            }else{
+                existUser.setUserName(user.getUserName());
+                existUser.setUserLastname(user.getUserLastname());
+                existUser.setUserEmail(user.getUserEmail());
+                existUser.setUserPhoneNumber(user.getUserPhoneNumber());
+                return userCrudRepository.save(existUser);
+            }
+        }
+        return null;
     }
 
     public void delete(String userId)
@@ -35,4 +51,10 @@ public class UserRepository{
     public Optional<User> findByUserEmail(String userEmail) {
         return userCrudRepository.findByUserEmail(userEmail);
     }
+
+    public User updatePassword(User user)
+    {
+        return userCrudRepository.save(user);
+    }
+
 }
