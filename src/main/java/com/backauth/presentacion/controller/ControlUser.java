@@ -5,8 +5,12 @@ import com.backauth.core.dominio.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -34,6 +38,7 @@ public class ControlUser {
     @PutMapping("/updateUser")
     public ResponseEntity<User> updateUser(@RequestBody User user)
     {
+
         if(serviceUser.getUser(user.getUserId()).isPresent())
         {
             return new ResponseEntity<>(serviceUser.updateUser(user),HttpStatus.ACCEPTED);
