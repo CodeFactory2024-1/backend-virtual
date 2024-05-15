@@ -61,9 +61,6 @@ public class ServiceUser {
         return userRepository.save(existingUser);
     }
 
-
-    // Método para actualizar un usuario
-
     public User updatePassword(User user)
     {
         return userRepository.updatePassword(user);
@@ -81,5 +78,4 @@ public class ServiceUser {
     {
         return userRepository.findByUserEmail(userEmail);
     }
-
 }
