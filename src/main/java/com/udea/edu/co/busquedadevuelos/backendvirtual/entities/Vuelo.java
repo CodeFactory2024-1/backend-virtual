@@ -50,7 +50,7 @@ public class Vuelo {
     @Column(name = "sobretasa", nullable = false)
     private Double sobretasa;
 
-    @Column(name = "porcentaje_impuestos", nullable = false)
+    @Column(name = "porcentaje_impuestos", nullable = false, updatable = false)
     private Double porcentajeImpuestos;
 
     @ManyToOne
