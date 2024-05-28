@@ -1,10 +1,10 @@
-package com.udea.edu.co.busquedadevuelos;
+package com.fabricaescuela20241.reserva;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BusquedadevuelosApplicationTests {
+class ReservaApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -5,22 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.3</version>
+		<version>3.2.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.udea.edu.co</groupId>
-	<artifactId>busquedadevuelos</artifactId>
+	<groupId>com.fabricaescuela20241</groupId>
+	<artifactId>reserva</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>busquedadevuelos</name>
-	<description>Modulo de busqueda de vuelos</description>
+	<name>reserva</name>
+	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jdbc</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -30,12 +26,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc11</artifactId>
@@ -51,6 +41,19 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.7.3</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -70,4 +73,35 @@
 		</plugins>
 	</build>
 
+	<profile>
+	  <id>coverage</id>
+	  <build>
+	   <plugins>
+	    <plugin>
+	      <groupId>org.jacoco</groupId>
+	     <artifactId>jacoco-maven-plugin</artifactId>
+	      <version>0.8.7</version>
+	      <executions>
+	        <execution>
+	          <id>prepare-agent</id>
+	          <goals>
+	            <goal>prepare-agent</goal>
+	          </goals>
+	        </execution>
+	        <execution>
+	          <id>report</id>
+	          <goals>
+	            <goal>report</goal>
+	          </goals>
+	          <configuration>
+	            <formats>
+	              <format>XML</format>
+	            </formats>
+	          </configuration>
+	        </execution>
+	      </executions>
+	    </plugin>
+	   </plugins>
+	  </build>
+	</profile>
 </project>

@@ -1,13 +1,15 @@
-package com.udea.edu.co.busquedadevuelos;
+package com.fabricaescuela20241.reserva;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BusquedadevuelosApplication {
+public class ReservaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BusquedadevuelosApplication.class, args);
+		SpringApplication.run(ReservaApplication.class, args);
+		System.out.println("La aplicacion inicio correctamente");
+
 	}
 
 }
